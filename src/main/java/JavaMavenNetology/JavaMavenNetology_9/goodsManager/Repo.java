@@ -19,14 +19,14 @@ public class Repo {
 
     public void removeByID(int removeID) {
         Product productFound = findById(removeID);
-        if(productFound == null) {
+        if (productFound == null) {
             throw new NotFoundException(removeID);
         }
 
         Product[] tmp = new Product[goods.length - 1];
         int index = 0;
         for (Product product : goods) {
-            if( product.getID() != removeID ) {
+            if (product.getID() != removeID) {
                 tmp[index] = product;
                 index++;
             }
